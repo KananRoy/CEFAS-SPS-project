@@ -43,14 +43,30 @@ for n = 1:iter(1) % flipping the original sequence to get valid output from Line
     end
 end
 
-plot(u_input);
-title('PRBS data');
-% axis([-1,D+1, Range(1)-1,Range(2)+1])
-grid on;
+
 time = Timestep*(0:Duration/Timestep)'; % timestep data to import in simulink
 tt = timetable(seconds(time), u_in_re); % timetable data to import in simulink inport
 
+figure()
+subplot(2,1,1)
+plot(u_input);
+title('PRBS data');
+subplot(2,1,2)
+plot(time,u_in_re,'r')
+title('PRBS input for LA')
+xlabel('Time (sec)')
+ylabel('Amplitude (V)')
+% axis([-1,D+1, Range(1)-1,Range(2)+1])
+grid on;
 
+
+
+figure()
+plot(time,out.simout)
+title('Output from LA model')
+axis([0 100 -.02 0.15])
+xlabel('Time (sec)')
+ylabel('Movement (meter)')
 % t  = linspace(0,Duration-Timestep,N)';
 % data = [t, u_in]';
 % % Raw input data : You can save as .mat
