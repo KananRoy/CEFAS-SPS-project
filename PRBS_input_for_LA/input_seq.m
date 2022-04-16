@@ -1,6 +1,13 @@
 % Kanan Roy
 % chowkana@isu.edu
-% 
+% Actual input sequence used to generate particular prbs input for LA.
+% Settling time: 0.7 sec
+% Band: 20% to 300% of settling time
+% Sampling time: 0.1 sec
+% Max. stroke length: 6 inch
+% Min. Stroke length: 0 inch
+% PRBS input: +/- 10V (generated prbs reversed to get valid response)
+
 
 clc 
 close all
